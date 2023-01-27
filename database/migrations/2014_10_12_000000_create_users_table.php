@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('gender',1)
+            $table->string('gender',2);
             $table->date('birthday');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -29,7 +29,7 @@ return new class extends Migration
             $table-> ipAddress('last_login_from');
             $table->timestamp('last_login_at')->nullable();
             $table->timestamps();
-            $table->softDeletes($column = 'deleted_at', $precision = 0);->nullable();
+            $table->softDeletes($column = 'deleted_at', $precision = 0)->nullable();
         });
     }
 

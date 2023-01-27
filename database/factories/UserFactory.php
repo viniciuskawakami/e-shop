@@ -25,10 +25,14 @@ class UserFactory extends Factory
             'birthday'=> fake()->unique()->dateTimeBetween('-16790 days', '+2 months')->format('Y-m-d'), // +- 46Y
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'gender'=> fake()->numberBetween(0,10),
+            'last_login_from'=> fake()->ipv4(),
+            'last_login_at' => \Carbon\Carbon::now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'created_at'=> now(),
-            'updated_at'=> now()
+            'created_at' => \Carbon\Carbon::now(), 
+
+                'updated_at' => \Carbon\Carbon::now(), 
         ];
     }
 

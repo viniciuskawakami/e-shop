@@ -17,23 +17,24 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('Name');
             $table->string('slug');
-            $table->string('description);
-            $table->string('thumbnail);
-            $table->string('img01_path);
-            $table->string('img02_path);
-            $table->string('img03_path);
-            $table->string('img04_path);
-            $table->string('img05_path);
-            $table->string('img06_path);
-            $table->text('detais');
+            $table->mediumText('description');
+            $table-> decimal ('price');
+            $table->string('thumbnail');
+            $table->string('image01_path');
+            $table->string('image02_path');
+            $table->string('image03_path');
+            $table->string('image04_path');
+            $table->string('image05_path');
+            $table->string('image06_path');
+            $table->longText('details');
             $table->integer('type_id');
-            $table->boolean('is_active');
-            $table-integer('cupon_id');
-            $table->integer('starred');
             $table->boolean('is_active')->default(1);
+            $table->integer('cupon_id')->nullable(true);
+            $table->integer('starred');
+            
             
             $table->timestamps();
-            $table->softDeletes($column = 'deleted_at', $precision = 0);->nullable();
+            $table->softDeletes($column = 'deleted_at', $precision = 0)->nullable();
         });
     }
 
